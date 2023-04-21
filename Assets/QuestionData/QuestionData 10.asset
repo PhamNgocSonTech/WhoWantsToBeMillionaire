@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
+  m_Name: QuestionData 10
+  m_EditorClassIdentifier: 
+  question: "C\xE2u 10. T\xEAn th\u01B0\u1EDDng g\u1ECDi c\u1EE7a Sodium Chloride
+    l\xE0 g\xEC?"
+  answerA: "Gi\u1EA5m"
+  answerB: "\u0110\u01B0\u1EDDng"
+  answerC: "Mu\u1ED1i"
+  answerD: "Ch\u1EA5t t\u1EA9y"
+  correctAnswer: c
+  isHardQuestion: 1

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
+  m_Name: QuestionData 5
+  m_EditorClassIdentifier: 
+  question: "C\xE2u 5. Con g\xEC \u0111\u1EADp th\xEC s\u1ED1ng, kh\xF4ng \u0111\u1EADp
+    th\xEC ch\u1EBFt?"
+  answerA: "Con ch\xF3"
+  answerB: "Con m\xE8o"
+  answerC: Con tim
+  answerD: "Con ng\u01B0\u1EDDi"
+  correctAnswer: c
+  isHardQuestion: 0

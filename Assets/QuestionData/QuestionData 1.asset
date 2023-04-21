@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
+  m_Name: QuestionData 1
+  m_EditorClassIdentifier: 
+  question: "C\xE2u 1. B\u1ECF ngo\xE0i n\u01B0\u1EDBng trong, \u0103n ngo\xE0i b\u1ECF
+    trong l\xE0 g\xEC?"
+  answerA: "B\u1EAFp n\u01B0\u1EDBng"
+  answerB: "C\u1EA3i lu\u1ED9c"
+  answerC: "Khoai tay chi\xEAn"
+  answerD: "M\xEC cay"
+  correctAnswer: a
+  isHardQuestion: 0
