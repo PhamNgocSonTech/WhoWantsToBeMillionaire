@@ -355,10 +355,19 @@ namespace Gameplay
                 displayTime = 0;
             }
             float seconds = Mathf.FloorToInt(displayTime % 60);
-            TimeRemain.text = string.Format("{00:00}", seconds);
+            TimeRemain.text = string.Format("00:0"+seconds);
 
         }
 
+        public void RestartEvent()
+        {
+            GameplayState();
+        }
+
+        public void MenuEvent()
+        {
+            HomeState();
+        }
         private int randomIndexQuest()
         {
             int randomValue = Random.Range(0, questionData.Length);
