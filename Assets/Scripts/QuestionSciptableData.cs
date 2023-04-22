@@ -1,3 +1,4 @@
+using Gameplay;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="QuestionData")]
 public class QuestionSciptableData : ScriptableObject
 {
+    //public List<Question> questionList;
     public string question;
     public string answerA;
     public string answerB;
