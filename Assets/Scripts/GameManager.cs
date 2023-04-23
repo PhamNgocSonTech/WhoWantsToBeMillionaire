@@ -92,7 +92,7 @@ namespace Gameplay
         private int gameScore = 0;
 
         //
-        private float timeValue = 10;
+        private float timeValue = 60;
         private float currentTime;
 
         // Start is called before the first frame update
@@ -100,14 +100,13 @@ namespace Gameplay
         {
             HomeState();
             ResetValueQuest(0);
-            currentTime = timeValue;
 
         }
 
         // Update is called once per frame
         void Update()
         {
-            //CountTime();
+            CountTime();
             //Debug.Log("Index Start: " + questionIndex);
             //Invoke("CountTime", 2f);
         }
@@ -246,10 +245,11 @@ namespace Gameplay
         {
             gameLives = 3;
             gameScore = 0;
+            currentTime = timeValue;
             SetGameState(GameState.GAMEPLAY);
             ResetValueQuest(0);
             SaveHighScore();
-            //CountTime();
+            CountTime();
         }
 
         public void HomeState()
@@ -333,23 +333,21 @@ namespace Gameplay
 
          private void CountTime()
          {
-             if(gameState == GameState.GAMEPLAY)
-             {
-                 currentTime -= Time.deltaTime;
-                 SetTime(timeValue);
-             }
-            
+            if (gameState == GameState.GAMEPLAY)
+            {
+                currentTime -= Time.deltaTime;
+                SetTime(timeValue);
+            }
          }
 
         private void SetTime(float valueCurrentTime )
         {
             TimeSpan time = TimeSpan.FromSeconds(currentTime);
             TimeRemain.text = time.ToString("mm':'ss");
-            if(currentTime <=0 )
+            if (currentTime <= 0 )
             {
-                GameOverState();
+                GameOverState();     
             }
-
         }
 
         /* private void CountTime()
