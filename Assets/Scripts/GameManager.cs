@@ -331,6 +331,7 @@ namespace Gameplay
             CountQuest.text = (index + 1) + " / " + totalQuest;
         }
 
+        //Rewrite count time func
          private void CountTime()
          {
             if (gameState == GameState.GAMEPLAY)
@@ -339,7 +340,7 @@ namespace Gameplay
                 SetTime(timeValue);
             }
          }
-
+        //Set time and format to second
         private void SetTime(float valueCurrentTime )
         {
             TimeSpan time = TimeSpan.FromSeconds(currentTime);
