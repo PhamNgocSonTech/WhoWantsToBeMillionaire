@@ -10,7 +10,6 @@ using Random = UnityEngine.Random;
 
 namespace Gameplay
 {
-  
     //Dùng Enum để định nghĩa các State
     public enum GameState
     {
@@ -18,6 +17,17 @@ namespace Gameplay
         GAMEPLAY,
         GAMEOVER,
         WINGAME
+    }
+
+    public class Question
+    {
+        public string question;
+        public string answerA;
+        public string answerB;
+        public string answerC;
+        public string answerD;
+        public string correctAnswer;
+        public bool isHardQuestion = false;
     }
 
     public class GameManager : MonoBehaviour
@@ -82,29 +92,23 @@ namespace Gameplay
         private int gameScore = 0;
 
         //
-        private float timeValue = 10;
+        private float timeValue = 60;
+        private float currentTime;
 
         // Start is called before the first frame update
         void Start()
         {
             HomeState();
             ResetValueQuest(0);
-            //showCountQuest();
-            /* questionIndex = 0;
-             CreateQuestion(0);*/
-            /* int a = randomIndexQuest();
-             Debug.Log("Random"+a);*/
+
         }
 
         // Update is called once per frame
         void Update()
         {
+            CountTime();
             //Debug.Log("Index Start: " + questionIndex);
-            //countTime();
-            Invoke("CountTime", 2f);
-
-
-
+            //Invoke("CountTime", 2f);
         }
 
         public void ClickAnswer(string selectorAnswer)
@@ -112,8 +116,6 @@ namespace Gameplay
             bool isCorrect = false;
             //int countCorrectQuest = 0;
             int sizeQuestionData = questionData.Length;
-
-
             if (questionData[questionIndex].correctAnswer == selectorAnswer)
             {
                 isCorrect = true;
@@ -152,7 +154,7 @@ namespace Gameplay
                 SubScore(isCorrect, gameScore);
                 Invoke("NextQuestion", 2f);
             }
-            
+          
             switch (selectorAnswer)
             {
                 case "a":
@@ -217,7 +219,6 @@ namespace Gameplay
             {
                 textQuestion.text = questionData[questionIndex].question;
                 textQuestion.color = Color.red;
-
             }
             textAnswerA.text = "A: " + questionData[questionIndex].answerA;
             textAnswerB.text = "B: " + questionData[questionIndex].answerB;
@@ -244,9 +245,11 @@ namespace Gameplay
         {
             gameLives = 3;
             gameScore = 0;
+            currentTime = timeValue;
             SetGameState(GameState.GAMEPLAY);
             ResetValueQuest(0);
             SaveHighScore();
+            CountTime();
         }
 
         public void HomeState()
@@ -264,7 +267,6 @@ namespace Gameplay
             CreateQuestion(0);
             ScoreOver.text = Score.text;
             SaveHighScore();
-
         }
 
         public void WinGameState()
@@ -308,7 +310,6 @@ namespace Gameplay
             questionIndex = valueIndex;
             ShowCountQuest(questionIndex);
             CreateQuestion(questionIndex);
-
             /* Code random Quest BUGGG ^^
              * questionIndex = Random.Range(valueIndex, questionData.Length);
             showCountQuest(questionIndex);
@@ -318,13 +319,10 @@ namespace Gameplay
 
         private void SaveHighScore()
         {
-            /*highScore = saveScore;
-            HighScore.text = "High Score: " + highScore.ToString();*/
             HighScoreGameplay.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();
             HighScoreMenu.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();
             HighScoreGameOver.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();
             HighScoreWin.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();
-
         }
 
         private void ShowCountQuest(int index)
@@ -333,31 +331,49 @@ namespace Gameplay
             CountQuest.text = (index + 1) + " / " + totalQuest;
         }
 
-        private void CountTime()
+        //Rewrite count time func
+         private void CountTime()
+         {
+            if (gameState == GameState.GAMEPLAY)
+            {
+                currentTime -= Time.deltaTime;
+                SetTime(timeValue);
+            }
+         }
+        //Set time and format to second
+        private void SetTime(float valueCurrentTime )
         {
-            if(timeValue > 0)
+            TimeSpan time = TimeSpan.FromSeconds(currentTime);
+            TimeRemain.text = time.ToString("mm':'ss");
+            if (currentTime <= 0 )
             {
-                timeValue -= Time.deltaTime;
+                GameOverState();     
             }
-            else
-            {
-                timeValue = 0;
-            }
-
-            //return timeValue;
-            ShowCountTime(timeValue);
         }
 
-        private void ShowCountTime(float displayTime)
-        {
-            if(displayTime < 0)
-            {
-                displayTime = 0;
-            }
-            float seconds = Mathf.FloorToInt(displayTime % 60);
-            TimeRemain.text = string.Format("00:0"+seconds);
+        /* private void CountTime()
+         {
+             if(timeValue > 0)
+             {
+                 timeValue -= Time.deltaTime;
+             }
+             else
+             {
+                 timeValue = 0;
+             }
+             ShowCountTime(timeValue);
+         }
 
-        }
+         private void ShowCountTime(float displayTime)
+         {
+             if(displayTime < 0)
+             {
+                 displayTime = 0;
+             }
+             float seconds = Mathf.FloorToInt(displayTime % 60);
+             TimeRemain.text = string.Format("00:0"+seconds);
+
+         }*/
 
         public void RestartEvent()
         {
@@ -372,11 +388,7 @@ namespace Gameplay
         {
             int randomValue = Random.Range(0, questionData.Length);
             //int indexRandom = questionData[];
-
             return randomValue;
         }
-
-
-       
     }
 }
