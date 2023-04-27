@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
   m_Name: QuestionData 4
   m_EditorClassIdentifier: 
-  question: "C\xE2u 4. \u0110\xE2u l\xE0 t\xEAn c\u1EE7a m\u1ED9t h\u1EC7 \u0111i\u1EC1u
-    h\xE0nh"
+  question: "\u0110\xE2u l\xE0 t\xEAn c\u1EE7a m\u1ED9t h\u1EC7 \u0111i\u1EC1u h\xE0nh"
   answerA: MacOS
   answerB: Java
   answerC: Steam

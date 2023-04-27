@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
-  m_Name: QuestionData 7
+  m_Name: QuestionData 14
   m_EditorClassIdentifier: 
-  question: "N\u1EBFu 'Kh\u1ED1i l\u1EADp ph\u01B0\u01A1ng' \u0111i v\u1EDBi 'H\xECnh
-    vu\xF4ng, 'H\xECnh vu\xF4ng' \u0111i v\u1EDBi ...?"
-  answerA: "M\xE1y bay"
-  answerB: "\u0110\u01B0\u1EDDng th\u1EB3ng"
-  answerC: "G\xF3c"
-  answerD: "Di\u1EC7n t\xEDch"
+  question: "B\u1EE9c t\u01B0\u1EE3ng kh\u1ED5ng l\u1ED3 Rhodes (The Colossus) l\xE0
+    m\u1ED9t trong 7 k\u1EF3 quan c\u1EE7a th\u1EBF gi\u1EDBi c\u1ED5 \u0111\u1EA1i
+    \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng m\xF4 ph\u1ECFng theo v\u1ECB th\u1EA7n
+    n\xE0o c\u1EE7a Hy L\u1EA1p c\u1ED5 \u0111\u1EA1i?"
+  answerA: Zeus
+  answerB: Helios
+  answerC: Hades
+  answerD: Hephaestus
   correctAnswer: b
   isHardQuestion: 0

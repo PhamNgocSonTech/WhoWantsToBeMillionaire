@@ -7,7 +7,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="QuestionData")]
 public class QuestionSciptableData : ScriptableObject
 {
-    //public List<Question> questionList;
     public string question;
     public string answerA;
     public string answerB;

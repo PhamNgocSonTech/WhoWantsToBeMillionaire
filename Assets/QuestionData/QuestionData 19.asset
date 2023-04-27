@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
-  m_Name: QuestionData 2
+  m_Name: QuestionData 19
   m_EditorClassIdentifier: 
-  question: "V\u1EEBa \u0103n l\u1EEDa v\u1EDBi than l\xE0 con g\xEC?"
-  answerA: "Con m\u1EF1c"
-  answerB: Con voi
-  answerC: "Con t\xE0u"
-  answerD: "Con ch\xF3"
+  question: "\u0110\u1EA1i di\u1EC7n cao nh\u1EA5t c\u1EE7a ch\xEDnh ph\u1EE7 l\xE2m
+    th\u1EDDi v\xE0o ti\u1EBFp nh\u1EADn l\u1EC5 tho\xE1i v\u1ECB c\u1EE7a vua B\u1EA3o
+    \u0110\u1EA1i t\u1EA1i Hu\u1EBF l\xE0 ai?"
+  answerA: "Tr\u1EA7n Huy Li\u1EC7u"
+  answerB: "T\xF4n \u0110\u1EE9c Th\u1EAFng"
+  answerC: "Nguy\u1EC5n L\u01B0\u01A1ng B\u1EB1ng"
+  answerD: "C\xF9 Huy C\u1EADn"
   correctAnswer: c
   isHardQuestion: 0

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
   m_Name: QuestionData 10
   m_EditorClassIdentifier: 
-  question: "C\xE2u 10. T\xEAn th\u01B0\u1EDDng g\u1ECDi c\u1EE7a Sodium Chloride
-    l\xE0 g\xEC?"
+  question: "T\xEAn th\u01B0\u1EDDng g\u1ECDi c\u1EE7a Sodium Chloride l\xE0 g\xEC?"
   answerA: "Gi\u1EA5m"
   answerB: "\u0110\u01B0\u1EDDng"
   answerC: "Mu\u1ED1i"

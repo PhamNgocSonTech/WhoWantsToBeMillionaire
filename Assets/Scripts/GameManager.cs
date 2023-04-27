@@ -19,7 +19,7 @@ namespace Gameplay
         WINGAME
     }
 
-    public class Question
+   /* public class Question
     {
         public string question;
         public string answerA;
@@ -28,7 +28,7 @@ namespace Gameplay
         public string answerD;
         public string correctAnswer;
         public bool isHardQuestion = false;
-    }
+    }*/
 
     public class GameManager : MonoBehaviour
     {
@@ -74,7 +74,7 @@ namespace Gameplay
         //[SerializeField] private QuestionData[] questionData;
 
         //khai báo mảng chứa các câu hỏi có kiểu dữ liệu là một ScriptableObject
-        [SerializeField] private QuestionSciptableData[] questionData;
+        //[SerializeField] private QuestionSciptableData[] questionData;
 
         //Khai báo các trường Panel sẽ được kích hoạt tương ứng với mỗi State
         [SerializeField] private GameObject homePanel, gameplayPanel, gameOverPanel, winGamePanel;
@@ -91,37 +91,39 @@ namespace Gameplay
         //Biến lưu số điểm
         private int gameScore = 0;
 
-        //
-        private float timeValue = 60;
+        //Biến lưu giá trị thời gian và thời gian hiện tại (currentTime)
+        private float timeValue = 30;
         private float currentTime;
+
+        //private QuestionSciptableData randomIndexQuestionData = QuestionManager.Ins.GetRandomQuestion();
+        private static QuestionSciptableData randomIndexQuestionData;
 
         // Start is called before the first frame update
         void Start()
         {
             HomeState();
             ResetValueQuest(0);
-
         }
 
         // Update is called once per frame
         void Update()
         {
             CountTime();
-            //Debug.Log("Index Start: " + questionIndex);
-            //Invoke("CountTime", 2f);
         }
 
         public void ClickAnswer(string selectorAnswer)
         {
             bool isCorrect = false;
-            //int countCorrectQuest = 0;
-            int sizeQuestionData = questionData.Length;
-            if (questionData[questionIndex].correctAnswer == selectorAnswer)
+            //int sizeQuestionData = questionData.Length;
+            int sizeQuestionData = QuestionManager.Ins.questionData.Count();
+
+
+            if (randomIndexQuestionData.correctAnswer == selectorAnswer)
             {
                 isCorrect = true;
                 /* countCorrectQuest++;
                  Debug.Log("Count Correct: " + countCorrectQuest);*/
-                if (questionData[questionIndex].isHardQuestion)
+                if (randomIndexQuestionData.isHardQuestion)
                 {
                     audioSource.PlayOneShot(sfxCorrectAnswer);
                     AddBonusScore();
@@ -142,7 +144,7 @@ namespace Gameplay
                     Debug.Log("You Lose");
                     return;
                 }
-                else if(gameLives > 0 && questionIndex == (sizeQuestionData - 1)) 
+                else if(gameLives > 0 && questionIndex == sizeQuestionData - 1) 
                 {
                     WinGameState();
                     Debug.Log("You Win");
@@ -177,7 +179,7 @@ namespace Gameplay
 
             if (isCorrect)
             {
-                if (questionIndex == (sizeQuestionData - 1))
+                if (questionIndex == sizeQuestionData)
                 {
                     Invoke("WinGameState", 1f);
                     //WinGameState();
@@ -193,13 +195,13 @@ namespace Gameplay
         {
             questionIndex++;
             ShowCountQuest(questionIndex);
-            CreateQuestion(questionIndex);
+            CreateQuestion();
         }
 
-        private void CreateQuestion(int paramIndex)
+        private void CreateQuestion()
         {
-            if (paramIndex < 0 || paramIndex >= questionData.Length)
-                return;
+            /*if (paramIndex < 0 || paramIndex >= questionData.Length)
+                return;*/
             /* imgAnswerA.color = Color.white;
              imgAnswerB.color = Color.white;
              imgAnswerC.color = Color.white;
@@ -210,20 +212,22 @@ namespace Gameplay
             imgAnswerC.sprite = buttonBlack;
             imgAnswerD.sprite = buttonBlack;
             //textQuestion.text = questionData[questionIndex].question;
-            if (!questionData[questionIndex].isHardQuestion)
+            QuestionSciptableData randIndex = RandomIndexQuestion();
+            Debug.Log(randIndex);
+            if (!randIndex.isHardQuestion)
             {
-                textQuestion.text = questionData[questionIndex].question;
+                textQuestion.text = randIndex.question;
                 textQuestion.color = Color.green;
             }
             else
             {
-                textQuestion.text = questionData[questionIndex].question;
+                textQuestion.text = randIndex.question;
                 textQuestion.color = Color.red;
             }
-            textAnswerA.text = "A: " + questionData[questionIndex].answerA;
-            textAnswerB.text = "B: " + questionData[questionIndex].answerB;
-            textAnswerC.text = "C: " + questionData[questionIndex].answerC;
-            textAnswerD.text = "D: " + questionData[questionIndex].answerD;
+            textAnswerA.text = "A: " + randIndex.answerA;
+            textAnswerB.text = "B: " + randIndex.answerB;
+            textAnswerC.text = "C: " + randIndex.answerC;
+            textAnswerD.text = "D: " + randIndex.answerD;
         }
 
         //Function cập nhật các state cho game
@@ -264,7 +268,7 @@ namespace Gameplay
         {
             SetGameState(GameState.GAMEOVER);
             //questionIndex = Random.Range(0, questionData.Length);
-            CreateQuestion(0);
+            CreateQuestion();
             ScoreOver.text = Score.text;
             SaveHighScore();
         }
@@ -300,7 +304,6 @@ namespace Gameplay
             {
                 gameScore -= 5;
                 Debug.Log("Uncorrect");
-
             }
             Score.text = "Score: " + gameScore.ToString();
         }
@@ -309,7 +312,7 @@ namespace Gameplay
         {
             questionIndex = valueIndex;
             ShowCountQuest(questionIndex);
-            CreateQuestion(questionIndex);
+            CreateQuestion();
             /* Code random Quest BUGGG ^^
              * questionIndex = Random.Range(valueIndex, questionData.Length);
             showCountQuest(questionIndex);
@@ -327,7 +330,9 @@ namespace Gameplay
 
         private void ShowCountQuest(int index)
         {
-            int totalQuest = questionData.Length;
+            //int totalQuest = questionData.Length;
+            int totalQuest = QuestionManager.Ins.questionData.Count();
+
             CountQuest.text = (index + 1) + " / " + totalQuest;
         }
 
@@ -384,11 +389,16 @@ namespace Gameplay
         {
             HomeState();
         }
-        private int randomIndexQuest()
+        private static QuestionSciptableData RandomIndexQuestion()
         {
-            int randomValue = Random.Range(0, questionData.Length);
-            //int indexRandom = questionData[];
-            return randomValue;
+            randomIndexQuestionData = QuestionManager.Ins.GetRandomQuestion();
+            Debug.Log(randomIndexQuestionData);
+            return randomIndexQuestionData;
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
         }
     }
 }
