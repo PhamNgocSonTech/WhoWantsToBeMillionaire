@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
   m_Name: QuestionData 1
   m_EditorClassIdentifier: 
-  question: "C\xE2u 1. B\u1ECF ngo\xE0i n\u01B0\u1EDBng trong, \u0103n ngo\xE0i b\u1ECF
-    trong l\xE0 g\xEC?"
+  question: "B\u1ECF ngo\xE0i n\u01B0\u1EDBng trong, \u0103n ngo\xE0i b\u1ECF trong
+    l\xE0 g\xEC?"
   answerA: "B\u1EAFp n\u01B0\u1EDBng"
   answerB: "C\u1EA3i lu\u1ED9c"
   answerC: "Khoai tay chi\xEAn"

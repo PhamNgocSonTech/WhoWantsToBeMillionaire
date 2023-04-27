@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
   m_Name: QuestionData 3
   m_EditorClassIdentifier: 
-  question: "C\xE2u 3. Tr\xEAn nh\u1EA5p d\u01B0\u1EDBi gi\u1EADt l\xE0 \u0111ang
-    l\xE0m g\xEC"
+  question: "Tr\xEAn nh\u1EA5p d\u01B0\u1EDBi gi\u1EADt l\xE0 \u0111ang l\xE0m g\xEC"
   answerA: "Nghe nh\u1EA1c"
   answerB: "C\xE2u c\xE1"
   answerC: "Ch\u01A1i game"

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
   m_Name: QuestionData 6
   m_EditorClassIdentifier: 
-  question: "C\xE2u 6. Ai l\xE0 ng\u01B0\u1EDDi \u0111\u1EA7u ti\xEAn ph\xE1t hi\u1EC7n
-    Penicillin?"
+  question: "Ai l\xE0 ng\u01B0\u1EDDi \u0111\u1EA7u ti\xEAn ph\xE1t hi\u1EC7n Penicillin?"
   answerA: Marie Curie
   answerB: Luis Pasteur
   answerC: Edward jenner

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
-  m_Name: QuestionData 9
+  m_Name: QuestionData 17
   m_EditorClassIdentifier: 
-  question: "Tr\u1ED9n m\xE0u xanh da tr\u1EDDi v\u1EDBi m\xE0u \u0111\u1ECF s\u1EBD
-    \u0111\u01B0\u1EE3c m\xE0u g\xEC?"
-  answerA: "T\xEDm"
-  answerB: "Xanh l\xE1"
-  answerC: "Xanh da tr\u1EDDi"
-  answerD: "N\xE2u"
+  question: "Giai \u0111o\u1EA1n ph\u1EE5c h\u01B0ng l\xE0 t\u1EEB th\u1EBF k\u1EF7
+    th\u1EE9 m\u1EA5y?"
+  answerA: "Th\u1EBF k\u1EF7 XV-XVI"
+  answerB: "Th\u1EBF k\u1EF7 XIV-XV"
+  answerC: "Th\u1EBF k\u1EF7 X-XI"
+  answerD: "Th\u1EBF k\u1EF7 XII-XIII"
   correctAnswer: a
   isHardQuestion: 0
