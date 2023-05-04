@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e601acc00f4ca9446a2b4aa7523df5d3, type: 3}
   m_Name: QuestionData 20
   m_EditorClassIdentifier: 
-  question: "Chi\u1EBFn th\u1EAFng l\u1EDBn lao c\u1EE7a qu\xE2n T\xE2y S\u01A1n
-    n\u0103m 1875 \u1EDF \u0110\xE0ng Trong l\xE0 chi\u1EBFn th\u1EAFng g\xEC?"
-  answerA: "Chi\u1EBFm \u0111\u1EA5t Gia \u0110\u1ECBnh"
-  answerB: "H\u1EA1 th\xE0nh Quy Nh\u01A1n"
-  answerC: "Gi\u1EA3i ph\xF3ng Qu\u1EA3ng Ng\xE3i \u2013 Ph\xFA Y\xEAn"
-  answerD: "\u0110\xE1nh b\u1EA1i qu\xE2n Xi\xEAm \u1EDF R\u1EA1ch G\u1EA7m \u2013
-    Xo\xE0i M\xFAt"
+  question: "N\u1EBFu b\u1EA1n r\u01A1i xu\u1ED1ng m\u1ED9t c\xE1i l\u1ED7 kh\xF4ng
+    c\xF3 kh\xF4ng kh\xED kh\xF4ng ma s\xE1t \u0111i kh\u1EAFp Tr\xE1i \u0111\u1EA5t
+    s\u1EBD m\u1EA5t bao l\xE2u \u0111\u1EC3 r\u01A1i sang ph\xEDa b\xEAn kia? (\u0110\u1EBFn
+    ph\xFAt g\u1EA7n nh\u1EA5t)"
+  answerA: "15 ph\xFAt"
+  answerB: "30 ph\xFAt"
+  answerC: "1 ph\xFAt"
+  answerD: "42 ph\xFAt"
   correctAnswer: d
   isHardQuestion: 0

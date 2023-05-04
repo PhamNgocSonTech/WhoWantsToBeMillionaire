@@ -7,35 +7,34 @@ public class QuestionManager : MonoBehaviour
 {
     public static QuestionManager Ins;
     public QuestionSciptableData[] questionData;
+    private List<QuestionSciptableData> questionsDataList;
+    private QuestionSciptableData currentQuestion;
+    //private int suffleTimes = 2;
 
-    List<QuestionSciptableData> questionsDataList;
-    QuestionSciptableData currentQuestion;
-
-    public QuestionSciptableData CurrentQuestion { get => currentQuestion; set => currentQuestion = value; }
+    QuestionSciptableData CurrentQuestion { get => currentQuestion; set => currentQuestion = value; }
 
     private void Awake()
     {
         questionsDataList = questionData.ToList();
-
-        //Debug.Log("Get Random Question Function: " + GetRandomQuestion().question);
         MakeSingleton();
     }
 
     public QuestionSciptableData GetRandomQuestion()
     {
-        if (questionsDataList != null && questionsDataList.Count() > 0)
+
+     /*   for(int i  = 0; i <  questionsDataList.Count; i++ )
         {
-            int randomIndex = Random.Range(0, questionsDataList.Count());
+            currentQuestion = questionsDataList[i];
+            int randomIndex = Random.Range(i, questionsDataList.Count);
+            questionsDataList[i] = questionsDataList[randomIndex];
+            questionsDataList[randomIndex] = currentQuestion;
+        }*/
 
-            currentQuestion= questionsDataList[randomIndex];
-
-            questionsDataList.RemoveAt(randomIndex);
-
-        }
-
+            int randomNumber = Random.Range(0, questionsDataList.Count);
+            currentQuestion = questionsDataList[randomNumber];
         return currentQuestion;
     }
-
+    
     public void MakeSingleton()
     {
         if (Ins == null)

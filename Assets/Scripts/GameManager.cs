@@ -6,8 +6,6 @@ using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
-
 namespace Gameplay
 {
     //Dùng Enum để định nghĩa các State
@@ -80,7 +78,7 @@ namespace Gameplay
         [SerializeField] private GameObject homePanel, gameplayPanel, gameOverPanel, winGamePanel;
 
         //Tạo một biến để lưu vị trí câu hỏi hiện tại
-        private int questionIndex;
+        private int questionIndex = 1;
 
         //Tạo một biến để lưu State hiện tại
         private GameState gameState;
@@ -92,11 +90,12 @@ namespace Gameplay
         private int gameScore = 0;
 
         //Biến lưu giá trị thời gian và thời gian hiện tại (currentTime)
-        private float timeValue = 30;
+        private float timeValue = 45;
         private float currentTime;
+        private int sizeQuestionForPlayer = 10;
 
         //private QuestionSciptableData randomIndexQuestionData = QuestionManager.Ins.GetRandomQuestion();
-        private static QuestionSciptableData randomIndexQuestionData;
+        private QuestionSciptableData randomIndexQuestionData;
 
         // Start is called before the first frame update
         void Start()
@@ -115,9 +114,8 @@ namespace Gameplay
         {
             bool isCorrect = false;
             //int sizeQuestionData = questionData.Length;
-            int sizeQuestionData = QuestionManager.Ins.questionData.Count();
-
-
+            //int sizeQuestionData = QuestionManager.Ins.questionData.Count();
+            int sizeQuestionData = sizeQuestionForPlayer;
             if (randomIndexQuestionData.correctAnswer == selectorAnswer)
             {
                 isCorrect = true;
@@ -144,7 +142,7 @@ namespace Gameplay
                     Debug.Log("You Lose");
                     return;
                 }
-                else if(gameLives > 0 && questionIndex == sizeQuestionData - 1) 
+                else if(gameLives > 0 && questionIndex == sizeQuestionData) 
                 {
                     WinGameState();
                     Debug.Log("You Win");
@@ -213,7 +211,6 @@ namespace Gameplay
             imgAnswerD.sprite = buttonBlack;
             //textQuestion.text = questionData[questionIndex].question;
             QuestionSciptableData randIndex = RandomIndexQuestion();
-            Debug.Log(randIndex);
             if (!randIndex.isHardQuestion)
             {
                 textQuestion.text = randIndex.question;
@@ -286,7 +283,6 @@ namespace Gameplay
             Score.text = "Score: " + gameScore.ToString();
             PlayerPrefs.SetInt("HighScore", gameScore);
             //SaveHighScore(gameScore);
-            Debug.Log("Correct");
         }
 
         private void AddBonusScore()
@@ -295,7 +291,6 @@ namespace Gameplay
             Score.text = "Score: " + gameScore.ToString();
             PlayerPrefs.SetInt("HighScore", gameScore);
             //SaveHighScore(gameScore);
-            Debug.Log("Correct");
         }
 
         private void SubScore(bool checkCorrect, int checkScore)
@@ -303,21 +298,15 @@ namespace Gameplay
             if (checkCorrect == false && checkScore > 0)
             {
                 gameScore -= 5;
-                Debug.Log("Uncorrect");
             }
             Score.text = "Score: " + gameScore.ToString();
         }
 
         private void ResetValueQuest(int valueIndex)
         {
-            questionIndex = valueIndex;
-            ShowCountQuest(questionIndex);
+            valueIndex = questionIndex;
+            ShowCountQuest(valueIndex);
             CreateQuestion();
-            /* Code random Quest BUGGG ^^
-             * questionIndex = Random.Range(valueIndex, questionData.Length);
-            showCountQuest(questionIndex);
-            CreateQuestion(questionIndex);
-            */
         }
 
         private void SaveHighScore()
@@ -330,10 +319,9 @@ namespace Gameplay
 
         private void ShowCountQuest(int index)
         {
-            //int totalQuest = questionData.Length;
-            int totalQuest = QuestionManager.Ins.questionData.Count();
-
-            CountQuest.text = (index + 1) + " / " + totalQuest;
+            int totalQuest = sizeQuestionForPlayer;
+            index = questionIndex;
+            CountQuest.text = (index) + " / " + totalQuest;
         }
 
         //Rewrite count time func
@@ -389,10 +377,9 @@ namespace Gameplay
         {
             HomeState();
         }
-        private static QuestionSciptableData RandomIndexQuestion()
+        private QuestionSciptableData RandomIndexQuestion()
         {
             randomIndexQuestionData = QuestionManager.Ins.GetRandomQuestion();
-            Debug.Log(randomIndexQuestionData);
             return randomIndexQuestionData;
         }
 

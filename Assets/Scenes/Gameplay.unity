@@ -4190,7 +4190,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Who Wants To Be Billionaire
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e4c73fc9b158c14fa2ce9cd8ad2cdc0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4251,10 +4251,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -70.68959, y: 0, z: -72.16243, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1417055897
@@ -4572,6 +4572,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15e113b11fb957247bff3b33159691e6, type: 2}
   - {fileID: 11400000, guid: 3fe86338e88a0c84f9fa48a31b34d7e7, type: 2}
   - {fileID: 11400000, guid: a574275eb4e80ba4ea8a5cc697ceacb2, type: 2}
+  - {fileID: 11400000, guid: a574275eb4e80ba4ea8a5cc697ceacb2, type: 2}
+  - {fileID: 11400000, guid: cc6df02efcf67054292f52d46185d7c5, type: 2}
+  - {fileID: 11400000, guid: 4b9f1bfb377c9bd4badd9e49f4784d7a, type: 2}
+  - {fileID: 11400000, guid: 907a238a4216375478be8bac424a8a2a, type: 2}
+  - {fileID: 11400000, guid: babf811b19673ba4dbe14868b36db338, type: 2}
+  - {fileID: 11400000, guid: 96811d8f491748d45b6d56524835dbb6, type: 2}
+  - {fileID: 11400000, guid: 4a454e650f71bd04484851c23485c5f7, type: 2}
+  - {fileID: 11400000, guid: a2076d54c800bc047b5471f691f71848, type: 2}
+  - {fileID: 11400000, guid: ab13b5509d0d11e489327ce7c47eeec0, type: 2}
+  - {fileID: 11400000, guid: cb0b9a67ada92d94cba8728508975fd3, type: 2}
+  - {fileID: 11400000, guid: 33daea0b30cdd8c4f8566b67b4e3a19b, type: 2}
 --- !u!1 &1487705407
 GameObject:
   m_ObjectHideFlags: 0
