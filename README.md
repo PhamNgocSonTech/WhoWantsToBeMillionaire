@@ -11,5 +11,5 @@
 ![image](https://github.com/PhamNgocSonTech/WhoWantsToBeMillionaire/assets/56107546/965249ec-36f2-4e22-8eef-fcba8956c34a)
 
 ---
-## Demo Gameplay
+## Download Demo :game_die: 
 **Coming Soon** :sparkles:
